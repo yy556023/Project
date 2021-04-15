@@ -10,5 +10,6 @@ $(function () {
     console.log($("#address").prop("value"));
     console.log($("input:radio[name='age']:checked").prop("value"));
     console.log($("input:radio[name='job']:checked").prop("value"));
+    console.log($(':checkbox:checked').prop('value'));
   };
 });
