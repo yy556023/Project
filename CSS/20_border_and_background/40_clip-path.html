@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        div {
+            width: 250px;
+            height: 250px;
+            background: lightcoral;
+            display: inline-block;
+        }
+
+        /* 10. 透過 clip-path: polygon() 在網頁上取得三角形區塊 */
+        .demo2 {
+            clip-path: polygon(50% 0,0 100%,100% 100%);
+        }
+
+        /* 20. 透過 clip-path: circle() 在網頁上取得圓形區塊 */
+        .demo3 {
+            clip-path: circle(50%);
+        }
+
+        /* 30. 透過 clip-path: polygon() 在網頁上取得多邊形區塊 */
+        .demo4 {
+            clip-path:polygon(0 50%,50% 0,100% 50%,50% 100%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>透過路徑設定複雜的多邊形</h3>
+    <h3><a href="https://www.w3schools.com/cssref/css3_pr_clip-path.asp">CSS clip-path Property</a></h3>
+    <h3>取得 path 的輔助工具：<a href="https://bennettfeely.com/clippy/">https://bennettfeely.com/clippy/</a></h3>
+
+    <hr>
+
+    <div class="demo1"></div>
+    <div class="demo2"></div>
+    <div class="demo3"></div>
+    <div class="demo4"></div>
+
+
+</body>
+
+</html>

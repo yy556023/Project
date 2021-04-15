@@ -1,0 +1,82 @@
+<!-- 優先權：多種不同的設定，會以誰為主? -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 試著在這裡設定底下css樣式，##每一個步驟執行完以後，請先查看畫面顏色的變化!! -->
+    <style>
+        img {
+            width: 200px;
+        }
+
+        /* 1. 加入 元素 div 的 背景顏色 background-color 為 #4286F3 */
+        div {
+            display: inline-block;
+            background-color: #4286f3;
+        }
+        /* 2. 類別 pokemon 的背景顏色設定為 #EB4537 */
+        .poke
+        {
+            background-color: #eb4537;
+        }
+        /* 3. 用 #id 挑選 幫這5個名稱 各自設定 背景顏色 */
+        #t1
+        {
+            background-color: green;
+        }
+        #t2
+        {
+            background-color:crimson
+        }
+        #t3
+        {   
+            background-color: blue;
+        }
+        #t4
+        {
+            background-color: yellow;
+        }
+        #t5
+        {
+            background-color: orange;
+        }
+        /* 4. 如果透過 div#Bulbasaur 背景顏色，會變成? */
+    </style>
+
+</head>
+
+<body>
+
+    <!-- 補充資料 -->
+    <h3><a href="https://ithelp.ithome.com.tw/articles/10196454">關於CSS權重的補充資料</a></h3>
+
+    <!-- 請先將 simple_selectors 完成的 body內容 複製過來 -->
+        <div id="t1" class="poke">
+            <h3>妙蛙種子</h3>
+            <img src="./image/Pokemon/001.png" alt="lost">
+        </div>
+        <div id="t2" class="poke">
+            <h3>小火龍</h3>
+            <img src="./image/Pokemon/004.png" alt="lost">
+        </div>
+        <div id="t3" class="poke">
+            <h3>傑尼龜</h3>
+            <img src="./image/Pokemon/007.png" alt="lost">
+        </div>
+        <div id="t4" class="poke">
+            <h3>皮卡丘</h3>
+            <img src="./image/Pokemon/025.png" alt="lost">
+        </div>
+        <div id="t5" class="poke">
+            <h3>北七</h3>
+            <img src="./image/LanLanCat/cat.jpg" alt="87">
+        </div>
+
+    <!-- 5. 請針元素，透過style的方式，背景顏色設定為 violet -->
+
+</body>
+
+</html>

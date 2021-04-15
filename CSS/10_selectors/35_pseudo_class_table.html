@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo-class</title>
+    
+    <!-- 底下練習table的框線設定，還有以及css的虛擬元素選擇器-->
+
+    <style>
+        /* 設定底下兩個tag的邊框
+           1.  table 的 border，2px solid red 
+           2.  td 的 border，2px dotted orange */
+        /* 3.  到 w3school 網頁，查詢border-collapse & border-spacing 這個屬性的用法，並且設定在 table 裡面試試看 */      
+        table{
+            border:2px solid red;
+            border-collapse: separate;
+            border-spacing: 15px 20px;
+        }
+        /* td{
+            border:2px dotted orange;
+            border-width: 0px 2px 0px 0px;
+        } */
+        tr{
+           border:2px dashed blue;
+           border-width: 0 0 2px 0;
+           display: block;
+        }
+        tr:last-child{
+            border-bottom: none;
+        }
+        /* td:last-child{
+            border-right: 0;
+        } */
+        tr:not(:first-child){
+            background-color: aqua;
+        }
+        tr:not(:first-child):hover{
+            background-color: green;
+        }
+        /* td:first-child,td+td{
+            border-left: 0;
+        } */
+        tr:nth-child(4){
+            background-color: blueviolet;
+        }
+        td:not(:last-child){
+            border:2px dotted orange;
+            border-width: 0 2px 0 0;
+        }
+        
+        /* 4.  在 table 裡面 設定 border-collapse: collapse 時， border-spacing 是否有設定成功? */
+        
+
+        /* 5.  在 td 裡面 設定  border-width: 0px 2px  以及 border-width: 2px 0px  觀察畫面變化 */
+        
+        /* 6.  設定 tr 的 border，只要底線，設定為2px dashed blue */
+        
+        /* 7.  若 tr 的 border 設定不成功，試試看加上display: block  */
+
+        /* 8.  移除最後一個tr的底線 */
+
+        /* 9.  設定 td:last-child { border-right: 0 ; } 觀察畫面變化 */
+
+        /* 10. 設定 td:first-child, td+td { border-left: 0; } 觀察畫面變化 */
+
+        /* 11. 設定不是第一列，背景顏色為 aqua */
+
+        /* 12. 設定第四列，背景顏色為 blueviolet */
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+    </table>
+</body>
+
+</html>

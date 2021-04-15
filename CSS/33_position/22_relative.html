@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/position.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h3>position：relative；如果沒有設定 top、bottom、left、right；表現會和 static 一樣</h3>
+    <h3>relative 相對位置，相對於前一個元素的位置</h3>
+    <h3>下一個元素的起始點，「會」計算元素為 position: relative 的高度</h3>
+
+    <!-- 10. 將 #greendiv 設定position: relative，觀察 藍色 袋子的位置變化 -->
+    <!-- 20. 改變 #greendivtop、bottom、left、right 屬性觀察 綠色 元素的移動位置 -->
+
+    <div class="demo">
+        <div id="reddiv">Red 200*200</div>
+        <div id="greendiv"> Green 150*300；<br>position: relative;</div>
+        <div id="bluediv">Blue 300*700</div>
+    </div>
+</body>
+
+</html>

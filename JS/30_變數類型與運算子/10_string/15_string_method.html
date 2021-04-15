@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <h3><a href="http://www.w3schools.com/js/js_string_methods.asp"> JavaScript String Methods </a></h3>
+
+    <script>
+        var str = "Practice makes perfect";
+
+        // 0. 字串的長度
+                // 22
+        // 1. 字串.match() 在字串中找到符合條件
+        var a = str.match("makes");
+     
+
+                console.log(a);
+        // 2. 字串.indexOf() 回傳了什麼?
+        var b = str.indexOf("z");
+        console.log(b);
+        // 3. 找到字串中最後一次出現的 e 的函式是什麼?
+
+        // 4. 要怎麼樣截取一段字串?
+        // 底下這個字串
+        var phones = '09112223330423456789';
+        // 0911222333 是 手機
+        // 0423456789 是 電話號碼
+        // 使用substr把手機號碼和電話號碼分別存在兩個變數裡面
+        var cel =phones.substr(0,10);
+        var tel = phones.substr(10,20);
+
+        console.log(cel);
+        console.log(tel);
+        // 5. 比較 substr()、substring()、slice()
+        
+        // substr 的參數為(起點,長度)
+        // substring 的參數為(起點,終點) 但是不接受負數參數
+        // slice的參數為(起點,終點)
+
+        // console.group("(0, 2)");
+        var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        var str1 ;
+
+        // var a = str.match(str);
+        // var p = str.match(str);
+        // var p1 = str.match(str);
+        // var l = str.match(str);
+        // var e = str.match(str);
+
+        str1 = str.indexOf("A")
+        str2 = str.indexOf("P")
+        str3 = str.indexOf("L")
+        str4 = str.indexOf("E")
+
+        console.log();
+        // console.log(`str.substr(0,2)：${str.substr(0, 2)}`);
+        // console.log(`str.substring(0,2)：${str.substring(0, 2)}`);
+        // console.log(`str.slice(0,2)：${str.slice(0, 2)}`);
+        // console.groupEnd();
+
+
+        // console.group("(3, 5)");
+        // console.log(`str.substr(3,5)：${str.substr(3, 5)}`);
+        // console.log(`str.substring(3,5)：${str.substring(3, 5)}`);
+        // console.log(`str.slice(3,5)： ${str.slice(3, 5)}`);
+        // console.groupEnd();
+
+        // console.group("(5, 3)");
+        // console.log(`str.substr(5,3)：${str.substr(5, 3)}`);
+        // console.log(`str.substring(5,3)：${str.substring(5, 3)}`);
+        // console.log(`str.slice(5,3)：${str.slice(5, 3)}`);
+        // console.groupEnd();
+
+        // console.group("(3)");
+        // console.log(`str.substr(3)：${str.substr(3)}`);
+        // console.log(`str.substring(3)：${str.substring(3)}`);
+        // console.log(`str.slice(3)： ${str.slice(3)}`);
+        // console.groupEnd();
+
+        // console.group("(-5)");
+        // console.log(`str.substr(-5)： ${str.substr(-5)}`);
+        // console.log(`str.substring(-5)：${str.substring(-5)}`);
+        // console.log(`str.slice(-5)：${str.slice(-5)}`);
+        // console.groupEnd();
+
+        // 6. 字串.split() 把字串分割為陣列
+        // var fruits = "apple, lemon, orange"
+        // console.log(fruits.split());
+
+    </script>
+</body>
+
+</html>

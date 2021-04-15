@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #redBox {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            padding-left: 50px;
+            padding-top: 50px;
+            box-sizing: border-box;
+        }
+
+        #blueBox {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h3><a href="https://www.youtube.com/watch?v=A6KInmeWJfo">冒泡/捕獲</a></h3>
+    <div id="redBox">
+        <div id="blueBox"></div>
+    </div>
+    <p id="showInfo"></p>
+    <script>
+
+        var showInfo = document.getElementById("showInfo");
+        var redBox = document.getElementById("redBox");
+        var blueBox = document.getElementById("blueBox");
+        redBox.addEventListener('click', function (e) {
+            showInfo.innerHTML += ` 
+                紅色盒子執行的事件: <br>
+                this.id => ${this.id} <br>
+                e.target.id => ${e.target.id} <br>
+                <br>
+            `
+        },true)
+        blueBox.addEventListener('click', function (e) {
+            showInfo.innerHTML += ` 
+                藍色盒子執行的事件: <br>
+                this.id => ${this.id} <br>
+                e.target.id => ${e.target.id} <br>
+                <br>
+            `
+        },true)
+        //this是觸發事件的盒子
+        //e.target是觸發的位置
+        //冒泡事件 由內而外 false 預設
+        //捕獲事件 由外而內 true
+
+    </script>
+</body>
+
+</html>

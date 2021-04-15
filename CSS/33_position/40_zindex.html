@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>z-index</title>
+    <style type="text/css">
+        div {
+            width: 400px;
+            height: 300px;
+            text-align: right;
+        }
+
+        #rainbow {
+            position: relative;
+        }
+
+        .posgroup {
+            position: absolute;
+        }
+
+        #content1 {
+            background-color: #FF0000;
+        }
+
+        #content2 {
+            background-color: #FF7F00;
+            top: 20px;
+            left: 60px;
+        }
+
+        #content3 {
+            background-color: #FFFF00;
+            top: 50px;
+            left: 120px;
+        }
+
+        #content4 {
+            background-color: #00FF00;
+            top: 80px;
+            left: 180px;
+        }
+
+        #content5 {
+            background-color: #00FFFF;
+            top: 110px;
+            left: 240px;
+        }
+
+        #content6 {
+            background-color: #0000FF;
+            top: 140px;
+            left: 300px;
+        }
+
+        #content7 {
+            background-color: #8B00FF;
+            top: 170px;
+            left: 360px;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <h3>z-index數值越大，堆疊的越前面(移到最上層的概念)：<a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_z-index&preval=2" target="_blank">https://www.w3schools.com/cssref/playit.asp?filename=playcss_z-index&preval=2</a></h3>
+    
+    <hr>
+    <div id="rainbow">
+        <div id="content1" class="posgroup">content1</div>
+        <div id="content2" class="posgroup">content2</div>
+        <div id="content3" class="posgroup">content3</div>
+        <div id="content4" class="posgroup">content4</div>
+        <div id="content5" class="posgroup">content5</div>
+        <div id="content6" class="posgroup">content6</div>
+        <div id="content7" class="posgroup">content7</div>
+    </div>
+</body>
+
+</html>

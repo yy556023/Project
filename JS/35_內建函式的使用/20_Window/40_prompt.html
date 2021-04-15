@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <button onclick="test()">點我提示輸入文字，然後顯示!!</button>
+
+    <script>
+        
+        // 10. 透過 prompt接收使用者輸入，並記錄下來
+        // function test(){
+        //     var a = window.prompt('輸入身高');
+        //     var b = window.prompt('輸入體重');
+
+        //     window.alert(`你的身高是${a} cm \n你的體重是${b} kg`);
+        // }
+        // 20. 將記錄到的資訊 alert 出來
+           function test(){
+            var a = window.prompt('輸入x')*1;
+            var b = window.prompt('輸入y')*1;
+            // a = parseInt(a,10);
+            // b = parseInt(b,10)
+            window.alert(a+b);
+        }
+    </script>
+
+</body>
+
+</html>

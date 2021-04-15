@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h3><a href="https://www.w3schools.com/js/js_loop_for.asp">https://www.w3schools.com/js/js_loop_for.asp</a></h3>
+    <!-- 顯示效果的地方 -->
+    <p id="pSquare"></p>
+    <p id="pTriangle"></p>
+
+    <script>
+        // 10. 使用 for 迴圈，列印出這個月份從1號到目前系統日
+        var d = new Date();
+        var dd = new Date();
+        dd.setDate(1);
+        var d1 = d.getDate();
+        var d2 = dd.getDate();
+
+        for(d2;d2<=d1;d2++){
+            console.log(`${d.getMonth()+1}/${d2}`);
+        }
+        // 20. 使用 for 迴圈，逐一取得陣列裡面的元素
+        var weekList = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        var x = weekList.length;
+        for (var y = 0;y < x;y++){
+            var t = weekList.shift();
+            // console.log(t);
+        }
+        // 30. 使用 for 迴圈，計算從 1 加到 10
+        var j = 0;
+
+        for (var x = 0;x < 10;x++){
+            j = j+(x+1);
+        }
+
+        // console.log(j);
+        // 40. 雙層迴圈 - 長方型星星
+        // **** 
+        // **** 
+        // **** 
+        // **** 
+        // **** 
+        // ****
+        for(var x = 0;x < 6;x++){
+            for (var y = 0;y < 5;y++){
+                if (y == 4){
+                    document.getElementById('pSquare').innerText += '\n';
+                }
+                else{
+                    document.getElementById('pSquare').innerText += '*';
+                }
+            }
+        }
+        // 50. 雙層迴圈 - 三角形
+        // * 
+        // ** 
+        // *** 
+        // **** 
+        for (var x = 0;x <= 4;x++){
+            for (var y = 0;y < x+1;y++){
+                if (y == x){
+                     document.getElementById('pTriangle').innerText += '\n';
+                }
+                else{
+                     document.getElementById('pTriangle').innerText += '*';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

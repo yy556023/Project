@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo-class</title>
+    <link rel="stylesheet" href="./navStyle.css">
+    <style>
+        /* 試試看 */
+        /* 10. 透過<a>標籤，設定字型大小 & 取消底線 */
+        a{
+                font-size: small;
+                text-decoration: none;
+                
+        }
+        /* 11. (link) 設定超連結未連結時的顏色 YellowGreen */
+        a:link{
+            color: yellowgreen;
+        }
+        /* 12. (visited) 設定超連結已連結過的顏色 LightCoral */
+        a:visited{
+            color: lightcoral;
+        }
+        /* 13. (hover) 設定滑鼠移至連結上方時的顏色 LightSkyBlue */
+        a:hover{
+            color: lightskyblue;
+        }
+        /* 14. (active) 設定超連結點選連結當下的顏色 black */
+        a:active{
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Pseudo-classes, 虛擬類別 </h3>
+    <h3>元素存在，且元素的樣式會隨使用者操作改變；</h3>
+    <h3>或元素存在，但無法透過 "simple selectors" 的方法選取的</h3>
+    <h3><a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">CSS Pseudo-classes</a></h3>
+    <h3>W3C 文件：<a href="https://www.w3.org/TR/2018/REC-selectors-3-20181106/#pseudo-classes"
+            target="_blank">https://www.w3.org/TR/2018/REC-selectors-3-20181106/#pseudo-classes</a></h3>
+
+    <hr>
+
+    <!-- 試試看 -->
+    <!--    20. 建立一組導覽列，如 pseudo_class_a完成圖.png -->
+    <!--       <nav>、<ul>、<li> -->
+        <nav class="navBar">
+            <ul>
+                <li><a href="https://www.w3schools.com/html/default.asp">HTML</a></li>
+                <li><a href="https://www.w3schools.com/css/default.asp">CSS</a></li>
+                <li><a href="https://www.w3schools.com/js/default.asp">JavaScript</a></li>
+                <li><a href="https://www.w3schools.com/sql/default.asp">SQL</a></li>
+                <li><a href="https://www.w3schools.com/php/default.asp">PHP</a></li>
+                <li><a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp">Bootstrap</a></li>
+                <li><a href="https://www.w3schools.com/jquery/default.asp">jQuery</a></li>
+            </ul>
+        </nav>
+    <!--    21. 設定點選項目的時候，會對應到 w3schools 的各項連結 -->
+    <!--    22. 引用 navStyle.css -->
+    <!--    23. 對照 navStyle.css 設定網頁元素 -->
+
+</body>
+
+</html>

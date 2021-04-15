@@ -1,0 +1,23 @@
+.demo {
+  background-color: #ff9933;
+}
+
+#reddiv {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+}
+
+#greendiv {
+  background-color: #00ff00;
+  width: 150px;
+  height: 300px;
+
+  /* 在這裡將元素的設定position: relative，並透過top、bottom、left、right觀察綠色元素的移動位置 */
+}
+
+#bluediv {
+  background-color: #0000ff;
+  width: 300px;
+  height: 700px;
+}

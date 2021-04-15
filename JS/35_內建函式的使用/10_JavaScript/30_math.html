@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+   
+    <h3><a href="http://www.w3schools.com/js/js_math.asp">JavaScript Math Object</a></h3>
+    <h3><a href="https://teamtreehouse.com/community/mathfloor-mathrandom-max-min-1-min-explanation">Math.floor( Math.random () * (max - min + 1)) + min)</a></h3>
+   
+    <script>
+        // 取亂數
+            var m1 = Math.random();
+
+        // 四捨五入
+            console.log(Math.round(49.5));
+            
+        // 無條件捨棄
+            console.log(Math.floor(49.8));
+        // 無條件進位
+            console.log(Math.ceil(49.1));
+        // 9開根號
+            console.log(Math.sqrt(9));
+        // 小練習：透過 Math.random() 取得 0-100 之間的亂數
+        // 0 < Math.random() < 1
+            
+        // 小練習：透過 Math.random() 取得 2-5 之間的亂數
+            var a = Math.random(); //0~0.99
+            a*=4;
+            a+=2;
+            console.log(Math.floor(a));
+
+            function R(){
+                var b = Math.random();
+                b *= 10;
+                //b += 2;
+                b = Math.floor(b);
+                if (b <= 5 && b >= 2){
+                    console.log(b);
+                }
+                else{
+                    return R();
+                }
+            }
+
+            if (true){
+                R();
+            }
+
+    </script>
+</body>
+
+</html>
+
+

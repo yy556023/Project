@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h3><a href="https://www.w3schools.com/jsref/jsref_dowhile.asp" target="_blank">JavaScript do/while Statement</a></h3>
+    <pre>
+        do {
+          // code block to be executed
+        }
+        while (condition);
+    </pre>
+
+    <button onclick="sum()">開始統計飲料金額</button>
+    <p id="demo"></p>
+
+    <!-- 先執行一次，再依據執行的結果判斷要不要啟動迴圈 -->
+    <script>
+        // 10. 透過 prompt 讓使用者輸入金額
+            var x=0;
+            var y = [];
+        
+            do{
+                y[x] = window.prompt('輸入金額');
+                x++;
+            }while(y[x-1] != '0')
+        // 20. 若輸入0表示不再輸入，進行畫面顯示結算金額
+            y.pop();
+            x -= 1; //修正陣列長度
+        function sum(){
+            var sum = 0;
+            do{
+                sum += y[x-1]*1; //字串轉數字 加總
+                console.log(y[x-1]);
+                x--;
+            }while(x != 0)
+    
+            
+
+            document.getElementById('demo').innerText = (`${y.join('+')}飲料金額總共${sum}元`);
+            
+        }
+
+    </script>
+
+</body>
+
+</html>

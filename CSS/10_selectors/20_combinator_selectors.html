@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Combinator selectors</title>
+
+    <!-- 後裔選擇器 -->
+
+    <style>
+        /*基本類型:標籤、#id、.class*/
+
+        /*(,) 屬於div標籤和span標籤，背景顏色都是黃色 */
+        div,span
+        {
+            background-color: yellow;
+        }
+
+        /* 底下為複合類型 */
+        /*(>) div標籤底下一層為span標籤，文字顏色改為綠色*/
+        /*    注意香吉士+喬巴+騙人布的差異 */
+        div>span
+        {
+            color: green;
+        }
+        
+        /*( ) div標籤"裡面所有"的span標籤，字型改為 font-family: fantasy; */
+        /*    香吉士+喬巴都套用到了 */
+        div span
+        {
+            font-family:fantasy;
+        }
+        
+        /*(+) div標籤"之後的第一個"span標籤，font-size: 3rem; (在同一層)*/
+        /*    布魯克 */
+        div+span
+        {
+            font-size: 3rem;
+        }
+        
+        /*(~) div標籤"之後的所有"span標籤，文字顏色改為紅色 (在同一層)*/
+        /*    布魯克+娜美 */
+        div~span
+        {
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+   
+    <span>第一個標籤 - 魯夫 - A ==> span</span>
+
+    <div>
+        <span>第二個標籤 - 香吉士 - B ==> div > span</span>
+        <p>
+            <span>第三個標籤 - 喬巴 - C ==> div > p > span</span>
+        </p>
+    </div>
+
+    <span>第四個標籤 - 布魯克 - D ==> span</span><br>
+    <span>第五個標籤 - 娜美 - E ==> span</span>
+
+    <div>
+        <span>第六個標籤 - 騙人布 - F ==> div > span</span>
+    </div>
+
+</body>
+
+</html>

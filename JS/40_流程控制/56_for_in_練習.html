@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+
+        // 10. 使用 for in，逐一尋覽物件裡面的屬性
+        var weekList = ["sunday", "monday", "tuesday", "wednesday", "thursday", null, "saturday"];
+
+        weekList.abc = 'lol'
+        // 20. 使用 for in，只會尋覽有值的資料出來
+
+        for (var x in weekList){
+            console.log(x);
+        }
+    </script>
+</body>
+
+</html>

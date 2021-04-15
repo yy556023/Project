@@ -1,0 +1,63 @@
+meta name 屬性值
+
+./ 同一層資料夾
+
+../上一層資料夾
+
+<b> 型態上變粗體
+<strong> 語意
+
+基礎tag: html head body
+
+head: head style title
+其他人的家:script
+文字格式:b i s u 型態
+strong em del ins 語意
+
+段落:p br hr pre h1~h6 div span
+有結構性:ul+li ol+li dl+dt dl+dd
+
+語意標籤:header footer article section nav
+表單:table+tr+th|td
+其他:img video link a
+
+pseudo 偽|虛擬
+
+margin 與外圍距離
+padding 與內圍距離
+
+
+CSS錯誤的原因
+1.打錯字
+2.選錯人
+3.公式錯誤 選擇器{屬性:屬性值;}
+4.權重
+!important>inline style>id>class>tag
+5.屬性衝突
+
+none:直接不見
+visibility: 藏起來
+------------------------------------------
+JS 存取 調整 請求 回應
+
+物件Object ==> 屬性 / 方法
+
+JS 宣告
+a~z
+A~Z
+0~9
+
+物件的類型就是  CallByReference
+基本(數值、字串)的類型就是  CallByValue
+-----------------------------------------
+HTML + CSS
+陳宗民
+https://www.dropbox.com/sh/5ohas6us9xi4pwl/AAAze01G0-lEaykpzumRy9AEa?dl=0
+
+JavaScript
+陳政德
+https://reurl.cc/9ZaeRn
+
+JQuery
+許雅婷 SQL 1/2, C# 的老師
+https://reurl.cc/1gkk98

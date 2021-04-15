@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo-elements</title>
+
+    <style>
+        /* 10. 先開啟網頁觀察畫面 */
+        #demo::after {
+            content: "::after 在元素後面增加 ";
+            background-color: chartreuse;
+        }
+
+        #newsTitle::after {
+            content: ".. 展開閱讀";
+            text-decoration: underline;
+        }
+        #demo::before{
+            content: "::before我是新來的";
+            background-color: gold;
+        }
+        /* 20. 透過id 選擇demo元素，並增加 ::before */
+        /* 21. 樣式中 content 可以指定元素內容 */
+        /* 22. 改變一下背景底色，確認範圍 */
+
+    </style>
+
+</head>
+
+<body>
+
+    <h3>Pseudo-elements, 虛擬元素</h3>
+    <h3>透過css產生網頁上的內容</h3>
+
+    <hr>
+
+    <h3><a href="https://www.w3schools.com/css/css_pseudo_elements.asp">CSS Pseudo-elements</a></h3>
+    <h3>W3C 文件：<a href="https://www.w3.org/TR/2018/REC-selectors-3-20181106/#pseudo-classes">https://www.w3.org/TR/2018/REC-selectors-3-20181106/#pseudo-classes</a></h3>
+    
+    <hr>
+
+    <p id="demo"> == 這裡有一行文字 == </p>
+    <p id="newsTitle"> 這是新聞標題 </p>
+
+</body>
+
+</html>

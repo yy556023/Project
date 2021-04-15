@@ -1,0 +1,29 @@
+img {
+  width: 150px;
+}
+div {
+  display: inline-block;
+  font-family: PMingLiU;
+}
+#t1 {
+  color: #0f0;
+}
+#t2 {
+  color: #f00;
+}
+#t3 {
+  color: #00f;
+}
+#t4 {
+  color: yellow;
+}
+.poke {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(./image/Pokemon/pokeball.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div>
+        <p>
+            <label for="ch" style="font-size: large;">請輸入頻道代碼：</label>
+            <input type="text" value="" id="ch">
+            <button onclick="ch()">查詢</button>
+        </p>
+        <p id = 'test' style="font-size: medium;">
+
+        </p>
+
+    </div>
+    <!-- 10. 請設計一個介面，讓使用者輸入頻道代碼後，網頁可以顯示對應的頻道名稱 -->
+
+    <script>
+        // 20. 透過 switch case 設定底下對應項目
+        //     20 ==> TLC 旅遊生活頻道
+        //     65 ==> HBO
+        //     66 ==> 東森洋片台
+        //     非上述 ==> 頻道尚未建立
+        // var x = window.prompt('輸入頻道代碼')*1;
+
+        function ch(){
+                
+            var x = document.getElementById('ch').value*1;
+            document.getElementById('ch').innerText = "";
+                
+
+                switch (x) {
+                case 20:
+                    {
+                        document.getElementById('test').innerHTML = "TLC旅遊生活頻道";
+                        // alert('TLC旅遊生活頻道');
+                        break;
+                    }
+                case 65:
+                    {
+                        document.getElementById('test').innerHTML = "HBO";
+                        // alert('HBO');
+                        break;
+                    }
+                case 66:
+                    {
+                        document.getElementById('test').innerHTML = "東森洋片台";
+                        // alert('東森洋片台');
+                        break;
+                    }
+                default:
+                    {
+                        document.getElementById('test').innerHTML = "頻道尚未建立";
+                        // alert('頻道尚未建立');
+                        break;
+                    }
+
+
+            }
+        }
+        
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            font-family: PMingLiU;
+        }
+        p
+        {
+            font-size: 25px;
+            font-family: PMingLiU;
+            font-weight: bold;
+        }
+        #ex
+        {
+             line-height: 1pt;
+        }
+        #ra
+        {
+            font-family:'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- 10. 製作一份表單-->
+    <!--   a. 標題：通勤工具使用調查-->
+    <!--   b. 在<body>裡面放入一個表單<form>-->
+    <!--   c. 在<form>表單內 加入 <fieldset> 和 <legend> 群組標籤並給予說明-->
+    <!--   d. 在表單<form>內加入 姓名 輸入欄位<input type="text">-->
+    <!--   e. 在表單<form>內加入 電話 輸入欄位<input type="text">-->
+        <P>通勤工具使用調查</P>
+
+        <form action="/action_page.php">
+            <label for="fn" id="ex">姓名：</label>
+            <input type="text" id="fn" name="fn"><br>
+            <label for="te" id="ex">電話：</label>
+            <input type="text" id="te" name="te"><br>
+            <!------------------------------------------------>
+            <label for="age">年紀：</label>
+            <input type="radio" id="20" name="age" value="20－30">
+            <label for="20" id="ra">20 - 30</label>
+            <input type="radio" id="30" name="age" value="30－40">
+            <label for="30" id="ra">30 - 40</label>
+            <input type="radio" id="40" name="age" value="40－50">
+            <label for="40" id="ra">40 - 50</label>
+            <input type="radio" id="50" name="age" value="50">
+            <label for="50" id="ra">50以上</label><br>
+            <!------------------------------------------------>
+            <label for="job">職業：</label>
+            <input type="radio" id="stu" name="stu" value="stu">
+            <label for="stu">學生</label>
+            <input type="radio" id="tea" name="tea" value="tea">
+            <label for="tea">教師</label>
+            <input type="radio" id="oth" name="oth" value="oth">
+            <label for="oth">其他</label><br>
+            <!------------------------------------------------>
+            <label for="trans">交通工具：</label>
+            <input type="checkbox" id="bicycle" name="bicycle" value="bicycle">
+            <label for="bicycle">腳踏車</label>
+            <input type="checkbox" id="bike" name="bike" value="bike">
+            <label for="bike">機車</label>
+            <input type="checkbox" id="boat" name="boat" value="boat">
+            <label for="boat">船</label>
+            <input type="checkbox" id="oth2" name="oth2" value="oth2">
+            <label for="oth2">其他</label>
+
+        </form>
+
+
+    <!-- 20. 加入 職業 <input type="radio">-->
+    <!--  id：識別某個HTML文件上的元素-->
+    <!--  class：HTML標籤的分組-->
+    <!--  name：伺服器端根據name取得值；做為radio、checkbox的分組-->
+
+    <!-- 30. 加入 交通工具 <input type="checkbox"> ，步驟和 1-2 類似 -->
+
+
+    <!-- 40. 請參考文件測試底下標籤 <fieldset> 和 <legend>-->
+</body>
+
+</html>

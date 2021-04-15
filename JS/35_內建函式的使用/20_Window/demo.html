@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="start()" >開始</button><br>
+  <button onclick="stop()">停止</button><br>
+  <button onclick="zero()">歸零</button><br>
+  <div id='counter'></div>
+  <script>
+    var i = 0;
+    var timerTask;
+    var run = false;
+    document.getElementById('counter').innerText = i;
+
+      function start(){
+        if (run){
+          return;
+        }
+        else{
+          run = true;
+          timerTask = setInterval(function(){
+          document.getElementById('counter').innerText = i++;
+          },50);       
+        }
+      }
+      function stop(){
+        run = false;
+        clearInterval(timerTask);
+      }
+      function zero(){
+        run = false;
+        i = 0;
+        document.getElementById('counter').innerText = i;
+        stop();
+      }
+  </script>
+</body>
+</html>

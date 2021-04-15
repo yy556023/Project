@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="n1">數字1</label>
+  <input type="text" id='n1' value="" name="n1"><br>
+  <label for="n2">數字2</label>
+  <input type="text" id='n2' value="" name='n2'><br>
+  <p>
+    <button onclick="plus()">+</button>
+    <button onclick="less()">-</button>
+    <button onclick="multi()">*</button>
+    <button onclick="except()">/</button>
+  </p>
+  <div id = 'sum'>
+    <label for="sum">結果：</label>
+  </div>
+
+  <script>
+
+      function plus(){
+        document.getElementById('sum').innerText = '結果：';
+        var x = document.getElementById('n1').value * 1;
+        var y = document.getElementById('n2').value * 1;
+        var sum = 0;
+        sum = x+y;
+        document.getElementById('sum').innerText += sum;
+      }
+      function less(){
+        document.getElementById('sum').innerText ='結果：';
+        var x = document.getElementById('n1').value * 1;
+        var y = document.getElementById('n2').value * 1;
+        var sum = 0;
+        sum = x-y;
+        document.getElementById('sum').innerText += sum;
+      }
+      function multi(){
+        document.getElementById('sum').innerText = '結果：';
+        var x = document.getElementById('n1').value * 1;
+        var y = document.getElementById('n2').value * 1;
+        var sum = 0;
+        sum =x*y;
+        document.getElementById('sum').innerText += sum;
+      }
+      function except(){
+        document.getElementById('sum').innerText = '結果：';
+        var x = document.getElementById('n1').value * 1;
+        var y = document.getElementById('n2').value * 1;
+        var sum = 0;
+        sum = (x*10)/(y*10);
+        sum = Math.round(sum,2);
+        document.getElementById('sum').innerText += sum;
+      }
+  </script>
+</body>
+</html>

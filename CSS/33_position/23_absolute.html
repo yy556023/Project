@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/position.css">
+    <style>
+       #greendiv{
+           position: absolute;
+           top: 50px;
+           left:50px;
+       }
+       .demo{
+           position: absolute;
+       }
+    </style>
+</head>
+
+<body>
+
+    <h3>position：absolute 絕對位置</h3>
+    <h3>會依據上一層元素的position設定值去計算若為static則會被忽略，若沒有，則會對應到body元素</h3>
+    <h3>下一個元素的起始點，「不會」計算元素為 position: absolute 的高度</h3>
+    
+    <!-- 10. 將 #greendiv 設定position: absolute，觀察 藍色 袋子的位置變化 -->
+    <!-- 20. 改變 #greendivtop、bottom、left、right 屬性觀察 綠色 元素的移動位置 -->
+
+    <div class="demo">
+        <div id="reddiv">Red 200*200</div>
+        <div id="greendiv"> Green 150*300；<br>position: relative;</div>
+        <div id="bluediv">Blue</div>
+    </div>
+</body>
+
+</html>

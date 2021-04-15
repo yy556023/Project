@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #redBox {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp">DOM EventListener</a></p>
+
+    <div id="redBox"></div>
+
+    <script>
+        // 10. 取得元素後，透過 addEventListener 增加事件 
+        var redBox = document.getElementById('redBox');
+
+
+        // 20. addEventListener mousemove事件
+        // redBox.addEventListener("mousemove", function(e) {
+        //         console.log(e);
+        //     })
+
+        // 30. addEventListener mouseenter事件
+        redBox.addEventListener("mouseenter", function(e) {
+                console.log(e);
+            })
+        // 40. addEventListener mouseenter事件
+        // redBox.addEventListener("mouseleave", function(e) {
+        //         console.log(e);
+        //     })
+
+
+    </script>
+</body>
+
+</html>

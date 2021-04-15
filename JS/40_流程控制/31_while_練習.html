@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <label for="pwd">輸入通關密碼：</label>
+    <input type="text" id="pwd" value=""><br>
+    <button onclick="stop()">停止</button>
+    <p id="count"></p>
+    <script>
+        
+        // 10. 計算從1加到10數值為多少
+        var x = 1;
+        var t = 0;
+        var y = 0;
+        while (x < 11){
+            t+=x;
+            x++;
+        }
+        // 20. 網頁必須輸入通關密碼1234才會停止
+        var run = setInterval(function(){
+            document.getElementById('count').innerText = y++;
+        },50);
+
+        function stop(){
+            var pwd = document.getElementById('pwd').value;
+            if (pwd == '1234'){
+                document.getElementById('pwd').value ="";
+                alert('密碼正確');
+                clearInterval(run);
+            // y = 0
+            // document.getElementById('count').innerText = y;
+            }
+            else{
+                document.getElementById('pwd').value = "";
+                alert('密碼錯誤');
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>

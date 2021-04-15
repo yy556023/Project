@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <p id="memo">點選圖片後，放大圖片和文字</p>
+    <img id="imgTest" onclick="changeImage()" src="../../_image/notification.png" ;>
+
+    <script>
+        // 1. 網頁的 圖片的 樣式的 寬度 改變
+            // function changeImage(){
+            //     document.getElementById('imgTest').width = 200;
+            // }
+        // 2. 網頁的 圖片的 樣式的 高度 改變
+              function changeImage() {
+                    document.getElementById('imgTest').style.height = '200px';
+                    document.getElementById('imgTest').style.width = '500px';
+                    document.getElementById('memo').style.fontSize = '50px';
+                }
+        // 3. 網頁的 memo的 樣式的 字型 改變
+                
+    </script>
+</body>
+
+</html>

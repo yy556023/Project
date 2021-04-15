@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <h3><a href="https://www.w3schools.com/jsref/obj_window.asp" target="_blank">The Window Object</a></h3>
+    <button onclick="delFn()">123</button>
+    <script>
+        // 10. 執行前請觀察底下程式碼：在網頁執行後，會跳出幾次訊息視窗？
+
+        // window.alert("第一次alert");
+
+        // alert("第二次alert");
+
+
+        // // 20. 測試 window.close()
+        // window.close();
+
+        function delFn(){
+            var t = confirm("test");
+            if (t){
+                console.log("hi");
+            }
+            else{
+                console.log('nope');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

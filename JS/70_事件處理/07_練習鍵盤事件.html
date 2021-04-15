@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp">DOM EventListener</a></p>
+    <p>element.addEventListener(event, function, useCapture);</p>
+
+    <!-- 10. 提供介面讓使用者輸入帳號密碼 -->
+    <div id="mainBag">
+        <label for="">請輸入帳號：</label>
+        <input type="text" id="userAccount" value="">
+        <br><br>
+        <label for="">請輸入密碼：</label>
+        <input type="text" id="userPwd" value="">
+        <br>
+        <button id="btnLogin" onclick="login()">登入</button>
+    </div>
+
+    <script>
+        // 20. 取得元素後，透過 addEventListener 增加事件 
+        window.addEventListener('keydown',function(e){
+           
+           console.log(e);
+            if (e.keyCode == 13)
+            {
+                login();
+            }
+            
+        })
+
+        var login = () => {
+            var acc = document.getElementById('userAccount').value;
+            var pwd = document.getElementById('userPwd').value;
+            alert(`帳號：${acc}\n密碼：${pwd}`)
+        }
+
+
+        function aaa(e) {}
+
+        aaa(123)
+
+    </script>
+</body>
+
+</html>

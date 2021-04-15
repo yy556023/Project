@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/position.css">
+    <style>
+        #reddiv{
+            position: fixed;
+            background-image: url(./img/onepiece20th_logo.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0);
+            bottom: 0px;
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>position：fixed<br>
+        fixed 沒有設定 top、bottom、left、right時 <br>
+        "預設" 的位置為 為 扣除【父容器】元素內容
+    </h3>
+
+    <div class="demo">
+        我是demo div的元素內容。<br>
+
+        <!-- 10. 將 #reddiv 固定在右下角，並且顯示圖片 -->
+        <!-- 20. 加上超連結，點選之後 -->
+        <a href="https://www.google.com.tw/"><div id="reddiv"></div></a>
+        <div id="greendiv">Green</div>
+        <div id="bluediv">Blue</div>
+    </div>
+
+</body>
+
+</html>

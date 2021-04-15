@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <h3>將功能獨立出來，提高程式的可用性</h3>
+
+    <h3><a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">JavaScript Functions</a></h3>
+    <button onclick="price()">123</button>
+    <script>
+        // 10. 函式宣告（Function Declaration）
+
+
+        // 20. 需要資訊的函式 / 傳入參數的函數
+        //     呼叫需要資訊的函式時，要把資訊帶入
+
+
+        // 30. 從函式取得一個回傳值
+
+
+        // 40. 函式運算式（Function Expressions）
+        
+
+        // 小練習：設計一個function，傳入數量和單價
+        //        數量10杯以上總金額打95折，20杯以上打9折
+        function price(count,price){
+            var x = window.prompt('輸入數量')*1;
+            var y = window.prompt('輸入金額')*1;
+            var sum = 0;
+            console.log(x);
+            console.log(typeof x);
+           if (x >= 20)
+            {
+                 sum = x * y * 0.9;
+            }
+            else if (x >= 10)
+            {
+                sum = x * y * 0.95;
+            }
+            else
+            {
+                sum = x * y;
+            }
+
+            return console.log(sum);
+        }
+
+    </script>
+</body>
+
+</html>
