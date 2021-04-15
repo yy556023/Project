@@ -4,11 +4,11 @@
 // 11. 畫面準備好以後才開始執行
 $(function () {
   btnGet.onclick = function () {
-    console.log("OK");
+    // console.log("OK");
     console.log($("#userName").prop("value"));
     console.log($("#phone").prop("value"));
     console.log($("#address").prop("value"));
-    console.log($("input:nth-child(5)").attr("value"));
-    // console.log($("input:nth-child(5)").attr("checked"));
+    console.log($("input:radio[name='age']:checked").prop("value"));
+    console.log($("input:radio[name='job']:checked").prop("value"));
   };
 });
