@@ -11,8 +11,7 @@ $(function () {
     console.log($("input:radio[name='age']:checked").prop("value"));
     console.log($("input:radio[name='job']:checked").prop("value"));
     for (i of $('input[name="vehicle"]')) {
-      
-      console.log(i.value);
+      if (i.checked) console.log(i.value);
     }
   };
 });

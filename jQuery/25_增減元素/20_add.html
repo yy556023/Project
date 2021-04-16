@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <script src="../_js/jquery-3.4.1.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <button id="btnAdd">附加清單</button>
-    <hr>
+    <hr />
     <div>
-        <h4>底下是清單</h4>
-        <ol>
-            <li>LINE Pay</li>
-            <li>Apple Pay</li>
-            <li>信用卡</li>
-        </ol>
+      <h4>底下是清單</h4>
+      <ol>
+        <li>LINE Pay</li>
+        <li>Apple Pay</li>
+        <li>信用卡</li>
+      </ol>
     </div>
 
     <script>
-        
-        btnAdd.onclick = function () {
-            
-          // 10. 測試 + 比較底下幾種方法的差異:
-          //    $().before(), 
-          //    $().after(),
-          //    $().prepend(), 
-          //    $().append(),
-          //    $().appendTo()
-            
-        }
+      btnAdd.onclick = function () {
+        // $("ol").append("<li>悠遊卡</li>");
+        // $("ol").before("<li>悠遊卡</li>");
+        // $("ol").after("<li>悠遊卡</li>");
+        // $("ol").prepend("<li>悠遊卡</li>");
+        // $("ol").appendTo("<li>悠遊卡</li>");
+            var x = $('ol').html();
+            console.log(x);
+            $('ol').append(x);
+        // 10. 測試 + 比較底下幾種方法的差異:
+        //    $().before(),
+        //    $().after(),
+        //    $().prepend(),
+        //    $().append(),
+        //    $().appendTo()
+      };
     </script>
-
-</body>
-
+  </body>
 </html>
