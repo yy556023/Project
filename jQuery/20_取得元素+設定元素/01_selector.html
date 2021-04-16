@@ -10,7 +10,7 @@
 
     <h4>jQuery()</h4>
     <p><a href="https://api.jquery.com/jQuery/" target="_blank">https://api.jquery.com/jQuery/</a></p>
-    <h4>jQuery Selectors</h4>
+    <h4 style="font-size: 36px; color: red;">jQuery Selectors</h4>
     <p><a href="https://www.w3schools.com/jquery/jquery_ref_selectors.asp"
             target="_blank">https://www.w3schools.com/jquery/jquery_ref_selectors.asp</a></p>
 
@@ -34,10 +34,17 @@
 
     <script>
         // 10. 挑選 h4 元素
-        var x = $('h4')
-        for(var i of $('h4')){
-            console.log(i);
-        }
+        var x = $('h4') //$('h4') => 一個陣列然後內容為 <h4>content</h4>
+        // for(var i of $('h4')){
+            // console.log(x[0].innerHTML);
+        // }
+            // $('h4:nth-child(1)').html('<h1>jQuery()</h1>')
+            x[0].innerHTML = '<h1>jQuery()</h1>'
+            x[1].innerHTML = '<h2>我是第二個</h2>'
+            x[2].innerHTML = '<h3>我是第三個</h2>'
+            x[3].innerHTML = '<p style="font-size:36px ;color:red; ">我是第四個</p>'
+
+//font-size:36px
         // 20. 透過 #ulist 選擇 ul 標籤
         console.log($("#ulist"));
         // 30. 挑選 li 標籤
