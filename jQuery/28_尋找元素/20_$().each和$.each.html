@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <script src="../_js/jquery-3.4.1.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <h4>$().each()</h4>
-    <p><a href="https://api.jquery.com/each/">https://api.jquery.com/each/</a></p>
+    <p>
+      <a href="https://api.jquery.com/each/">https://api.jquery.com/each/</a>
+    </p>
 
     <h4>jQuery.each()</h4>
-    <p><a href="https://api.jquery.com/jquery.each/">https://api.jquery.com/jquery.each/</a></p>
+    <p>
+      <a href="https://api.jquery.com/jquery.each/"
+        >https://api.jquery.com/jquery.each/</a
+      >
+    </p>
 
     <h4>$ vs $()</h4>
-    <p><a
-            href="https://learn.jquery.com/using-jquery-core/dollar-object-vs-function/">https://learn.jquery.com/using-jquery-core/dollar-object-vs-function/</a>
+    <p>
+      <a
+        href="https://learn.jquery.com/using-jquery-core/dollar-object-vs-function/"
+        >https://learn.jquery.com/using-jquery-core/dollar-object-vs-function/</a
+      >
     </p>
-    <hr>
+    <hr />
 
     <h3>apple</h3>
     <h3>bee</h3>
     <h3>cat</h3>
 
     <script>
-        // 10. 畫面準備好以後才開始執行
-        $(function () {
+      // 10. 畫面準備好以後才開始執行
+      $(function () {
+        // $("h3").each(function (aa, bb) {
+        //   console.log(bb.innerText);
 
-            // 20. $().each(): 逐項取得所有 h3 元素 裡面的文字
+        //   console.log($(bb).text());
+        // });
+        // 20. $().each(): 逐項取得所有 h3 元素 裡面的文字
 
-            // 21. 將所有 h3 元素的文字改為斜體
-
-            // 30. $.each(): 讀出陣列裡面的項目
-            var list = ['dog', 'egg'];
-
-        })
+        // // 21. 將所有 h3 元素的文字改為斜體
+        //     $('h3').each(function(){
+        //         this.innerHTML = `<i>${this.innerText}</i>`
+        //         // $(this).html(`<i>${$(this).text()}</i>`)
+        //     })
+        // 30. $.each(): 讀出陣列裡面的項目
+        var list = ["dog", "egg"];
+            $.each(list,function(hi,bye){
+                    console.log(hi);
+            });
+        var x = () => console.log('abc');
+        x();
+      });
     </script>
-</body>
-
-
+  </body>
 </html>
