@@ -13,7 +13,7 @@
     <p><a href='https://api.jquery.com/css/'>https://api.jquery.com/css/</a></p>
 
     <hr>
-    
+
     <p id="p1">Apple</p>
     <p id="p2">Bee</p>
     <p id="p3">Cat</p>
@@ -22,16 +22,22 @@
 
     <script>
         $(function () {
-            
+            var x = $('#p1').css('color')
+            console.log(x);
+
+            var p2 = $('#p2').css('color','#fff')
+            var p3 = $('#p3').css('color','rgb(0,255,0)')
+            var p4 = $('#p4').css('color','gold')
             // 10. 取得 #p1 標籤的顏色
             // 20. 設定 #p1 標籤的顏色
-           
+
             // 30. 取得 h4 標籤的 id
             // 40. 設定 h4 標籤的 id
-
+            $('h4').eq(0).prop('id','ass') //
+            console.log($('h4'));
             // 50. $().css() 其他型態的參數
             //  * 15_練習_點選改變字型大小.html 練習後回來補充說明
-            
+
         })
     </script>
 
