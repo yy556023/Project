@@ -64,3 +64,10 @@ https://reurl.cc/9ZaeRn
 JQuery
 許雅婷 SQL 1/2, C# 的老師
 https://reurl.cc/1gkk98
+
+$().each()
+jQuery function 執行回傳一個jQueryj物件
+使用jQuery物件裡面的each function
+
+jQuery.each()
+jQuery函式庫有一個each function

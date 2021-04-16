@@ -1,22 +1,13 @@
 $(function () {
+  // 10. 練習設定初始值
+  btnSet.onclick = function () {
+    // 20. 將地址預設為台中
+      $('#userName').val('林柏豪');
 
-    // 10. 練習設定初始值
-    btnSet.onclick = function () {
-
-        // 20. 將地址預設為台中
-        var x = document.getElementById('address');
-        var i = document.getElementById("address");
-        for (i.value of x.value) {
-            if (i.value == 'Taichung') {
-                console.log(i);
-
-            }
-        }
-
-        // 30. 將職業預設為其他
-
-
-        // 40. 將交通工具預設為機車
-
-    }
+      $('#address').val('Taichung')
+    // 30. 將職業預設為其他
+      $('input[name="job"][value="other"]').prop('checked', true);
+    // 40. 將交通工具預設為機車
+      $('input[name="vehicle"][value="motorcycle"]').prop('checked', true);
+  };
 });
