@@ -50,6 +50,9 @@ A~Z
 物件的類型就是  CallByReference
 基本(數值、字串)的類型就是  CallByValue
 -----------------------------------------
+虛擬類別  : 元素存在，但無法簡單挑選 | 元素狀態改變的時候
+虛擬元素 ::
+-----------------------------------------
 HTML + CSS
 陳宗民
 https://www.dropbox.com/sh/5ohas6us9xi4pwl/AAAze01G0-lEaykpzumRy9AEa?dl=0
