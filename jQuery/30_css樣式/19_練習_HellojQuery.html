@@ -4,34 +4,8 @@
     <meta charset="UTF-8" />
     <script src="../_js/jquery-3.4.1.js"></script>
     <script src="../_js/js19.js"></script>
+    <link rel="stylesheet" href="./js19.css" />
   </head>
-  <style>
-    #big {
-      position: absolute;
-      display: flex;
-      flex-direction: row;
-      max-width: 99%;
-      max-height: 98%;
-      height: 1080px;
-      width: 2560px;
-    }
-    #big:hover {
-      cursor: pointer;
-    }
-    #c1 {
-      transition: background-color 1.5s, color 1.5s;
-      flex: 1;
-      font-size: 100px;
-      text-align: center;
-    }
-    #c2 {
-      transition: background-color 1.5s, color 1.5s;
-      flex: 1;
-      font-size: 100px;
-      text-align: center;
-    }
-  </style>
-
   <body>
     <div id="big">
       <div id="c1"></div>
@@ -39,19 +13,22 @@
     </div>
 
     <script>
+      var run = false;
+      var time;
       //載入好後執行一次網頁換成對比色
       $().ready(function () {
         load();
       });
-
-      var run = false;
-      var time;
       $("body").prepend('<button id ="stop">停止</button>');
       $("body").prepend('<button id ="start">開始</button>');
-
       $("#start").click(start);
       $("#stop").click(stop);
-      //產生16進位的RGB數字 00~FF
+      $("#big").click(load);
+    </script>
+  </body>
+</html>
+
+<!-- //產生16進位的RGB數字 00~FF
       // change = (c) => {
       //   if (c < 16) {
       //     re = "0" + c.toString(16).toUpperCase();
@@ -73,6 +50,7 @@
 
       //   x = color(r, g, b);
       //   y = color(255 - r, 255 - g, 255 - b);
+
       //   //div c1 c2背景顏色更換成對比色 文字使用對方的顏色 並且顯示現在顏色的6位數字碼
       //   //JS
       //   document.getElementById("c1").style.backgroundColor = x;
@@ -91,12 +69,4 @@
 
       //   console.log("左：" + x);
       //   console.log("右：" + y);
-      // };
-      //body標籤被點擊 執行function
-      $("#big").click(load);
-      // * 模仿 Hello Color
-      //   https://jxnblk.github.io/hello-color/?c=f7da2d
-      //   做出一個隨機產生 對比色|互補色 的網頁
-    </script>
-  </body>
-</html>
+      // }; -->

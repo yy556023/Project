@@ -1,0 +1,24 @@
+#big {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      max-width: 99%;
+      max-height: 98%;
+      height: 1080px;
+      width: 2560px;
+    }
+    #big:hover {
+      cursor: pointer;
+    }
+    #c1 {
+      transition: background-color 1.5s, color 1.5s;
+      flex: 1;
+      font-size: 100px;
+      text-align: center;
+    }
+    #c2 {
+      transition: background-color 1.5s, color 1.5s;
+      flex: 1;
+      font-size: 100px;
+      text-align: center;
+    }
