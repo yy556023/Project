@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <style></style>
+    <meta charset="UTF-8" />
     <script src="../_js/jquery-3.4.1.js"></script>
-</head>
+  </head>
 
-<body>
-    
+  <body>
     <script>
+      // 10. 用 JavaScript 改變body背景底色
+      // document.body.style.backgroundColor = 'green';
 
-        // 10. 用 JavaScript 改變body背景底色
+      // x = document.getElementsByTagName('body');
+      // console.log(x);
+      // x[0].style.backgroundColor = 'red';
 
-        // 20. 用 jQuery 改變body背景底色
-                
-        // 30. 隨機產生背景底色
-        
-        // 40. 點選按鈕產生背景底色
-        
-        // 50. 加入 setInterval 讓畫面每秒更新上述設定
-        
+      // 20. 用 jQuery 改變body背景底色
+
+      // $("body").css("background-color",'blue')
+      // 30. 隨機產生背景底色
+      function color() {
+        //產生#??? ?為16進位 生字串做法
+        var c =
+          "#" +
+          Math.round(Math.random() * 15).toString(16) +
+          Math.round(Math.random() * 15).toString(16) +
+          Math.round(Math.random() * 15).toString(16);
+        document.body.style.backgroundColor = c; //使用把產生的c字串 丟進去
+        console.log(c);
+        // 亂數產生0~255的作法
+        // var r = Math.round(Math.random() * 255);
+        // var g = Math.round(Math.random() * 255);
+        // var b = Math.round(Math.random() * 255);
+        // document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+        // console.log(`rgb(${r},${g},${b})`);
+      }
+      run = false; //宣告狀態
+      // 40. 點選按鈕產生背景底色
+      $("body").prepend('<button id = "stop">停止</button>'); //新增按鈕
+      $("body").prepend('<button id = "start">開始</button>');
+
+      $("#start").on("click", function () {
+        //綁定開始按鈕執行 setIn事件
+        if (run) {
+          return;
+        } else {
+          run = true;
+          x = setInterval(color, 500);
+        }
+      });
+      $("#stop").on("click", function () {
+        //綁定停止按鈕 清除set事件
+        run = false;
+        clearInterval(x);
+        console.log("setInterval has been stop");
+        document.body.style.backgroundColor = "white";
+      });
     </script>
-</body>
-
+  </body>
 </html>
