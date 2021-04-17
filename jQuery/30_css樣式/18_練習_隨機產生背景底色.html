@@ -5,7 +5,11 @@
     <meta charset="UTF-8" />
     <script src="../_js/jquery-3.4.1.js"></script>
   </head>
-
+  <style>
+    body {
+      transition: background-color 0.5s;
+    }
+  </style>
   <body>
     <script>
       // 10. 用 JavaScript 改變body背景底色
@@ -16,16 +20,27 @@
       // x[0].style.backgroundColor = 'red';
 
       // 20. 用 jQuery 改變body背景底色
+        start = () => {
+        if (run) {
+          return;
+        } else {
+          run = true;
+          x = setInterval(color, 500);
+        }
+      };
+
+        stop = () => {
+        run = false;
+        clearInterval(x);
+        console.log("setInterval has been stop");
+        document.body.style.backgroundColor = "white";
+      };
 
       // $("body").css("background-color",'blue')
       // 30. 隨機產生背景底色
       function color() {
         //產生#??? ?為16進位 生字串做法
-        var c =
-          "#" +
-          Math.round(Math.random() * 15).toString(16) +
-          Math.round(Math.random() * 15).toString(16) +
-          Math.round(Math.random() * 15).toString(16);
+        var c = "#" + Math.round(Math.random() * 15).toString(16) + Math.round(Math.random() * 15).toString(16) + Math.round(Math.random() * 15).toString(16);
         document.body.style.backgroundColor = c; //使用把產生的c字串 丟進去
         console.log(c);
         // 亂數產生0~255的作法
@@ -40,22 +55,8 @@
       $("body").prepend('<button id = "stop">停止</button>'); //新增按鈕
       $("body").prepend('<button id = "start">開始</button>');
 
-      $("#start").on("click", function () {
-        //綁定開始按鈕執行 setIn事件
-        if (run) {
-          return;
-        } else {
-          run = true;
-          x = setInterval(color, 500);
-        }
-      });
-      $("#stop").on("click", function () {
-        //綁定停止按鈕 清除set事件
-        run = false;
-        clearInterval(x);
-        console.log("setInterval has been stop");
-        document.body.style.backgroundColor = "white";
-      });
+      $("#start").on("click", start); //綁定開始按鈕執行 setIn事件
+      $("#stop").on("click", stop);
     </script>
   </body>
 </html>

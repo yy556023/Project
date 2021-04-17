@@ -1,25 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <script src="../_js/jquery-3.4.1.js"></script>
-</head>
+  </head>
+  <style>
+    #big {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      max-width: 99%;
+      max-height: 98%;
+      height: 1080px;
+      width: 2560px;
+    }
+    #big:hover {
+      cursor: pointer;
+    }
+    #c1 {
+      transition: background-color 1.5s, color 1.5s;
+      flex: 1;
+      font-size: 100px;
+      text-align: center;
+    }
+    #c2 {
+      transition: background-color 1.5s, color 1.5s;
+      flex: 1;
+      font-size: 100px;
+      text-align: center;
+    }
+  </style>
 
-<body>
+  <body>
+    <div id="big">
+      <div id="c1"></div>
+      <div id="c2"></div>
+    </div>
 
-    <p>底下是顏色設定範例:</p>
-    <span style="color: hsla(0, 100%, 50%);">Apple</span>
-    <span style="color: hsl(180, 100%, 50%);">Bee</span>
-  
     <script>
+      //載入好後執行一次網頁換成對比色
+      $().ready(function () {
+        load();
+      });
+      $("body").prepend('<button id ="start">開始</button>');
 
-        // * 模仿 Hello Color 
-        //   https://jxnblk.github.io/hello-color/?c=f7da2d
-        //   做出一個隨機產生 對比色|互補色 的網頁
+      //產生16進位的RGB數字 00~FF
+      change = (c) => {
+        if (c < 16) {
+          re = "0" + c.toString(16).toUpperCase();
+          return re;
+        } else {
+          return c.toString(16).toUpperCase();
+        }
+      };
+      //組合成 #000000~#FFFFFF
+      color = (r, g, b) => {
+        c = "#" + change(r) + change(g) + change(b);
+        return c;
+      };
 
+      load = () => {
+        var r = Math.round(Math.random() * 255);
+        var g = Math.round(Math.random() * 255);
+        var b = Math.round(Math.random() * 255);
+
+        x = color(r, g, b);
+        y = color(255 - r, 255 - g, 255 - b);
+        //div c1 c2背景顏色更換成對比色 文字使用對方的顏色 並且顯示現在顏色的6位數字碼
+        //JS
+        document.getElementById("c1").style.backgroundColor = x;
+        document.getElementById("c1").style.color = y;
+        document.getElementById("c1").innerText = x;
+        document.getElementById("c2").style.backgroundColor = y;
+        document.getElementById("c2").style.color = x;
+        document.getElementById("c2").innerText = y;
+        //JQ
+        // $("#c1").css("backgroundColor", x);
+        // $("#c1").css("color", y);
+        // $("#c1").text(`${x}`);
+        // $("#c2").css("backgroundColor", y);
+        // $("#c2").css("color", x);
+        // $("#c2").text(`${y}`);
+
+        console.log("左：" + x);
+        console.log("右：" + y);
+      };
+      //body標籤被點擊 執行function
+      $("#big").click(load);
+      // * 模仿 Hello Color
+      //   https://jxnblk.github.io/hello-color/?c=f7da2d
+      //   做出一個隨機產生 對比色|互補色 的網頁
     </script>
-    
-</body>
-
+  </body>
 </html>
