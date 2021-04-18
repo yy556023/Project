@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <p id="demo">Flower</p>
     <button id="btnLogin">登入</button>
 
     <script>
-        // 模仿 jQuery 的 text() 自己寫一個 MyText()
-        function MyText(param){
-            // 判斷 if
-            if(param){
-                document.getElementById('demo').innerText = param;
-            }else{
-                return document.getElementById('demo').innerText;
-            }
+      // 模仿 jQuery 的 text() 自己寫一個 MyText()
+      function MyText(param) {
+        var x = document.getElementById("demo");
+        // 判斷 if
+        if (param) {
+          x.innerHTML = `<h1>${param}</h1>`;
+        } else {
+          return (x.innerHTML = `<h1>${x.innerText}</h1>`);
         }
-        
-        btnLogin.onclick = function(){
-            // // 沒有傳入值的時候，希望得到 p 目前的文字
-            // var temp = MyText();
-            // console.log(temp);
+      }
 
-            // 有傳入值的時候，希望拿值去設定 p 
-            MyText('Hi');
-        }
+      btnLogin.onclick = function () {
+        // // 沒有傳入值的時候，希望得到 p 目前的文字
+        // var temp = MyText();
+        // console.log(temp);
+
+        // 有傳入值的時候，希望拿值去設定 p
+        MyText("");
+      };
     </script>
-
-</body>
-
+  </body>
 </html>

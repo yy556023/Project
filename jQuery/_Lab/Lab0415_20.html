@@ -1,66 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
 
-<head>
-  <title>Document</title>
-</head>
+  <body>
+    <script>
+      // 陣列:[{},{}] 迴圈 function(參數) 回傳值
 
-<body>
-  <script>
-    // 陣列:[{},{}] 迴圈 function(參數) 回傳值
-
-    // id, 名字, 價錢, 折扣
-    var pxmart = [{
-      pid: 1,
-      pname: 'Apple',
-      pprice: 100,
-      pdiscount: 'Y'
-    }, {
-      pid: 2,
-      pname: 'Cat',
-      pprice: 200,
-      pdiscount: 'N'
-    }];
-
-    // 算總金額
-    function getTotal(car, cc) {
-      var result = 0;
-      for (var item of car) {
-        result += cc(item.pdiscount, item.pprice);
+      // id, 名字, 價錢, 折扣
+      var pxmart = [
+        {
+          pid: 1,
+          pname: "Apple",
+          pprice: 100,
+          pdiscount: "Y",
+        },
+        {
+          pid: 2,
+          pname: "Cat",
+          pprice: 200,
+          pdiscount: "N",
+        },
+      ];
+        var x = pxmart[0].pprice;
+        console.log(x);
+      // 算總金額
+      function getTotal(car, cc) {
+        var result = 0;
+        for (var item of car) {
+          result += cc(item.pdiscount, item.pprice);
+          // console.log(item);
+        }
+        return result;
       }
-      return result;
-    }
 
-    // 算折扣
-    function getDiscount(aa, bb) {
-      // 判斷
-      if (aa == "Y") {
-        return bb * 0.8;
-      } else {
-        return bb;
+      // 算折扣
+      function getDiscount(aa, bb) {
+        // 判斷
+        if (aa == "Y") {
+          return bb * 0.8;
+        } else {
+          return bb;
+        }
       }
-    }
 
-    // // v1
-    // var temp_v1 = getTotal(pxmart);
-    // console.log(temp_v1);
+      // v1
+      // var temp_v1 = getTotal(pxmart);
+      // console.log(temp_v1);
 
-    // v2
-    var temp_v2 = getTotal(pxmart, getDiscount);
-    console.log(temp_v2);
+      // v2
+      var temp_v2 = getTotal(pxmart, getDiscount);
+      console.log(temp_v2);
 
-    // v3
-    var temp_v3 = getTotal(pxmart, function (aa, bb) {
-      // 判斷
-      if (aa == "Y") {
-        return bb * 0.8;
-      } else {
-        return bb;
-      }
-    })
-    console.log(temp_v3);
-
-  </script>
-</body>
-
+      // v3
+      // var temp_v3 = getTotal(pxmart, function (aa, bb) {
+      //   // 判斷
+      //   if (aa == "Y") {
+      //     return bb * 0.8;
+      //   } else {
+      //     return bb;
+      //   }
+      // })
+      // console.log(temp_v3);
+    </script>
+  </body>
 </html>
