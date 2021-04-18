@@ -1,13 +1,14 @@
 body section * {
-    margin: 10px;
-    padding: 10px;
-    border: 2px solid lightgray;
+  transition: background-color 1.5s;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid lightgray;
 }
 
-.bgColor{
-    background-color: lightcoral;
+.bgColor {
+  background-color: lightcoral;
 }
 
-p[id^='p']{
-    background-color: blue;
+p[id^="p"] {
+  background-color: blue;
 }
