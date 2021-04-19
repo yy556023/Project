@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <script src="../_js/jquery-3.4.1.js"></script>
-    <script src="../_js/js19.js"></script>
+    <!-- <script src="../_js/js19.js"></script> -->
     <link rel="stylesheet" href="./js19.css" />
+    <style>
+      #d1 {
+        color: hsl(0, 100%, 50%);
+        color: hsl(180, 100%, 50%);
+      }
+    </style>
   </head>
   <body>
     <div id="big">
@@ -17,56 +23,24 @@
       var time;
       //載入好後執行一次網頁換成對比色
       $().ready(function () {
-        load();
+        // load();
       });
       $("body").prepend('<button id ="stop">停止</button>');
       $("body").prepend('<button id ="start">開始</button>');
       $("#start").click(start);
       $("#stop").click(stop);
-      $("#big").click(load);
+      // $("#big").click(load);
+      $("#big").click(function () {
+        var x = hsl();
+        $("#c1").css("backgroundColor", `hsl(${x},100%,50%)`);
+        $("#c2").css("backgroundColor", `hsl(${x + 180},100%,50%)`);
+        console.log(`左：hsl(${x},100%,50%)`);
+        console.log(`右：hsl(${x + 180},100%,50%)`);
+      });
+      function hsl() {
+        var h = Math.round(Math.random() * 180);
+        return h;
+      }
     </script>
   </body>
 </html>
-
-<!-- //產生16進位的RGB數字 00~FF
-      // change = (c) => {
-      //   if (c < 16) {
-      //     re = "0" + c.toString(16).toUpperCase();
-      //     return re;
-      //   } else {
-      //     return c.toString(16).toUpperCase();
-      //   }
-      // };
-      // //組合成 #000000~#FFFFFF
-      // color = (r, g, b) => {
-      //   c = "#" + change(r) + change(g) + change(b);
-      //   return c;
-      // };
-
-      // load = () => {
-      //   var r = Math.round(Math.random() * 255);
-      //   var g = Math.round(Math.random() * 255);
-      //   var b = Math.round(Math.random() * 255);
-
-      //   x = color(r, g, b);
-      //   y = color(255 - r, 255 - g, 255 - b);
-
-      //   //div c1 c2背景顏色更換成對比色 文字使用對方的顏色 並且顯示現在顏色的6位數字碼
-      //   //JS
-      //   document.getElementById("c1").style.backgroundColor = x;
-      //   document.getElementById("c1").style.color = y;
-      //   document.getElementById("c1").innerText = x;
-      //   document.getElementById("c2").style.backgroundColor = y;
-      //   document.getElementById("c2").style.color = x;
-      //   document.getElementById("c2").innerText = y;
-      //   //JQ
-      //   // $("#c1").css("backgroundColor", x);
-      //   // $("#c1").css("color", y);
-      //   // $("#c1").text(`${x}`);
-      //   // $("#c2").css("backgroundColor", y);
-      //   // $("#c2").css("color", x);
-      //   // $("#c2").text(`${y}`);
-
-      //   console.log("左：" + x);
-      //   console.log("右：" + y);
-      // }; -->

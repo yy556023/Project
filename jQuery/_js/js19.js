@@ -1,18 +1,19 @@
-change = (c) => {
+	//產生16進位的RGB數字 00~FF
+	change = (c) => {
         if (c < 16) {
           re = "0" + c.toString(16).toUpperCase();
           return re;
         } else {
           return c.toString(16).toUpperCase();
         }
-      };
-      //組合成 #000000~#FFFFFF
-color = (r, g, b) => {
+      	};
+      	//組合成 #000000~#FFFFFF
+	color = (r, g, b) => {
         c = "#" + change(r) + change(g) + change(b);
         return c;
-      };
+      	};
 
-load = () => {
+	load = () => {
         var r = Math.round(Math.random() * 255);
         var g = Math.round(Math.random() * 255);
         var b = Math.round(Math.random() * 255);
@@ -37,20 +38,20 @@ load = () => {
 
         console.log("左：" + x);
         console.log("右：" + y);
-      };
+      	};
 
-start = () => {
+	start = () => {
         if (run) {
           return;
         } else {
           run = true;
           time = setInterval(load, 1500);
         }
-      };
+      	};
 
-stop = () => {
+	stop = () => {
         run = false;
         clearInterval(time);
         console.log("setInterval has been stop");
         document.body.style.backgroundColor = "white";
-      };
+      	};
