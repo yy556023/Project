@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/30_cssstyle.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/30_cssstyle.css" />
     <script src="../_js/jquery-3.4.1.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <h4>.css()</h4>
-    <p><a href='https://api.jquery.com/css/'>https://api.jquery.com/css/</a></p>
+    <p><a href="https://api.jquery.com/css/">https://api.jquery.com/css/</a></p>
 
-    <hr>
+    <hr />
 
     <p id="p1">Apple</p>
     <p id="p2">Bee</p>
@@ -21,26 +19,26 @@
     <p id="p5">Egg</p>
 
     <script>
-        $(function () {
-            var x = $('#p1').css('color')
-            console.log(x);
+      $(function () {
+        var x = $("#p1").css("color");
+        console.log(x);
 
-            var p2 = $('#p2').css('color','#fff')
-            var p3 = $('#p3').css('color','rgb(0,255,0)')
-            var p4 = $('#p4').css('color','gold')
-            // 10. 取得 #p1 標籤的顏色
-            // 20. 設定 #p1 標籤的顏色
+        var p2 = $("#p2").css({
+          color: "gold",
+          fontSize: "400px",
+        });
+        var p3 = $("#p3").css("color", "rgb(0,255,0)");
+        var p4 = $("#p4").css("color", "gold");
+        // 10. 取得 #p1 標籤的顏色
+        // 20. 設定 #p1 標籤的顏色
 
-            // 30. 取得 h4 標籤的 id
-            // 40. 設定 h4 標籤的 id
-            $('h4').eq(0).prop('id','ass') //
-            console.log($('h4'));
-            // 50. $().css() 其他型態的參數
-            //  * 15_練習_點選改變字型大小.html 練習後回來補充說明
-
-        })
+        // 30. 取得 h4 標籤的 id
+        // 40. 設定 h4 標籤的 id
+        $("h4").eq(0).prop("id", "ass"); //
+        console.log($("h4"));
+        // 50. $().css() 其他型態的參數
+        //  * 15_練習_點選改變字型大小.html 練習後回來補充說明
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
