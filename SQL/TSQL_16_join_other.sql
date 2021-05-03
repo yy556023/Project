@@ -26,16 +26,42 @@
 SELECT * FROM Orders
 SELECT * FROM Customers
 
---SELECT A.CustomerID , COUNT(*) , B.CustomerID
-SELECT *
+SELECT A.CustomerID , COUNT(*) , B.CustomerID
 FROM Customers AS A LEFT JOIN Orders AS B
     ON A.CustomerID = B.CustomerID
 WHERE B.CustomerID IS NULL
---GROUP BY A.CustomerID,B.CustomerID
+GROUP BY A.CustomerID,B.CustomerID
 
 -- 20. "假設" 北風資料庫中，產品資料表(Products) 和 產品類別資料表(Categories) 目前沒有關聯
 --		如果每一個產品類別都包含所有於產品資料表的品項，該如何得到這樣的資料?
+SELECT * FROM Products CROSS JOIN Categories
+
+
 
 
 -- 30. 觀察 Employees 資料表可以知道，員工的主管也包含在其中；
 --		請幫忙整理出員工以及員工的主管姓名
+
+SELECT A.EmployeeID,A.LastName,A.FirstName,A.ReportsTo,ISNULL(B.FirstName,'BOSS') 上司名稱
+FROM Employees AS A LEFT JOIN Employees AS B
+    ON A.ReportsTo = B.EmployeeID
+
+
+SELECT *
+FROM [Order Details]
+
+SELECT *
+FROM Products
+
+--訂單編號 產品代號 產品名稱 單價 數量 折扣 小計
+
+SELECT *
+FROM [Order Details]
+
+SELECT *
+FROM Products
+
+SELECT OrderID,P.ProductID,P.ProductName,O.UnitPrice,O.Quantity,Discount,(O.UnitPrice * O.Quantity * (1 - Discount)) 小計
+FROM [Order Details] AS O RIGHT JOIN Products AS P
+    ON O.ProductID = P.ProductID
+ORDER BY OrderID,ProductID
