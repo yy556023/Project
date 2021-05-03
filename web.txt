@@ -66,8 +66,22 @@ JQuery
 https://reurl.cc/1gkk98
 
 $().each()
-jQuery function 執行回傳一個jQueryj物件
+jQuery function 執行回傳一個jQuery物件
 使用jQuery物件裡面的each function
 
 jQuery.each()
 jQuery函式庫有一個each function
+-------------------------------------
+-- join語法 inner left right L/R使用時機取決於哪邊資料種類多
+-- inner join為 都相等才會列出 L/R會列出NULL
+/*身分證 姓名 住址 電話*/
+
+--iif SQL Server獨有 函數
+
+inner join 內部連結
+left right join 外部連結
+使用時機取決於哪邊資料種類多
+
+除了有用到運算式的欄位
+group by 裡面都要出現，出現幾格欄位 群組幾次
+distinct 去除重複的資料
