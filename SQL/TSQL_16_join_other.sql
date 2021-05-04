@@ -64,4 +64,4 @@ FROM Products
 SELECT OrderID,P.ProductID,P.ProductName,O.UnitPrice,O.Quantity,Discount,(O.UnitPrice * O.Quantity * (1 - Discount)) 小計
 FROM [Order Details] AS O RIGHT JOIN Products AS P
     ON O.ProductID = P.ProductID
-ORDER BY OrderID,ProductID
+ORDER BY OrderID,ProductID 
