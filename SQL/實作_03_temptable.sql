@@ -7,9 +7,13 @@
 --   3-2:全域暫存資料表(Global Temporary Tables) ##
 --   3-3:使用通用資料表運算式(Common Table Expressions)
 SELECT *
-INTO Lab.dbo.Categories
+-- INTO Lab.dbo.Categories
 FROM Northwind.dbo.Categories
 
+--無須創建的複製寫法
+-- SELECT 欄位名稱
+-- INTO 資料庫名稱.資料夾.資料表
+-- FROM 資料庫名稱.資料夾.資料表
 
 
 --- SQL Server 2017/2019
@@ -22,17 +26,22 @@ FROM Northwind.dbo.Categories
 --	透過 select into 語法
  -- 將 Northwind 資料庫中 的 Categories 資料表寫入到 Lab 資料庫
 
-SELECT * INTO #LabCategories FROM Northwind.dbo.Categories
-SELECT * FROM #LabCategories
+SELECT *
+INTO #Test
+FROM Northwind.dbo.Categories
 
-INSERT #LabCategories VALUES
-(
-	'CAT',
-	'DOG',
-	'PIG'
+INSERT #Test VALUES (
+	'A','B',0x151C
 )
 
+SELECT *
+FROM #Test
 -- 11. 建立完畢後，請測試寫入資料至#LabCategories，是否有錯誤訊息？ (O)
+
+SELECT *
+FROM Northwind.dbo.Categories
+
+
 
 -- 13. 請新增一個查詢視窗，是否還能查到 #LabCategories? (X)
 
@@ -44,8 +53,12 @@ INSERT #LabCategories VALUES
 
 -- 21. 請新增一個查詢視窗，是否還能查到 ##LabShippers? (X)
 
-SELECT * INTO ##LabShippers from Northwind.dbo.Shippers
-SELECT * FROM ##LabShippers
+SELECT *
+INTO ##TEST
+FROM Northwind.dbo.Categories
+
+SELECT *
+FROM ##TEST
 
 
 -- 30. 使用 CTE 進行遞迴查詢
@@ -56,11 +69,15 @@ SELECT * FROM ##LabShippers
 		--  (
 		--  	--查詢語法
 		--  )
-
-		--  with test as
-		--  (
-		--  	SELECT * FROM Northwind.dbo.Employees
-		--  )
-		--  SELECT * from test
+			-- WITH TEST (欄位1,欄位2) AS
+			-- (
+			-- 	SELECT * FROM AddressBook.dbo.UserInfo
+			-- )
+			-- SELECT * FROM TEST
 
 -- 31. 測試透過 with 關鍵字 建立員工資料表
+-- WITH ID AS
+-- (
+-- 	SELECT * FROM Northwind.dbo.Employees
+-- )
+-- SELECT * FROM ID
