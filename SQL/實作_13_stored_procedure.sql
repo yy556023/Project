@@ -35,9 +35,12 @@ CREATE PROCEDURE uspGetEmployee as
     select * from DemoEmp
     select * from DemoSalary
 
+
 -- 21. 執行 uspGetEmployee 查看
 
-EXEC uspInsertSalary 1,42500
+EXEC uspGetEmployee
+
+-- 31. 測試 uspInsertSalary
 
 CREATE PROCEDURE uspInsertSalary @id int,@s int as
     INSERT INTO DemoSalary
@@ -45,8 +48,9 @@ CREATE PROCEDURE uspInsertSalary @id int,@s int as
     VALUES
     (@id,FORMAT(GETDATE(),'yyyyMMdd'),@s)
 
+EXEC uspInsertSalary 2,34800
 
--- 31. 測試 uspInsertSalary
+select * from DemoSalary
 -- 1. 更新員工註記 => 'D' ==> update DemoEmp
 -- set EmpStatus = 'D' where EmpID = ?
 

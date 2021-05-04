@@ -1,7 +1,3 @@
-
-
-
-
 -- 4.產生流水號的方法
 --    4-3:透過順序物件(Sequences) 來產生序號
 
@@ -17,13 +13,6 @@
 
 
 	-- 執行底下語法新增 table，測試 identity 和 sequences 取號與跳號情形
-	create table Lab.dbo.TestSEQ
-	(
-		ID int identity(1,1) not null,
-		SEQ int null,
-		Memo varchar(50) null,
-		CreateDate datetime
-	)
 
 
 	-- 20-1. 測試結果： (X)
