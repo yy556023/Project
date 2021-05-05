@@ -46,4 +46,3 @@ FROM Products AS A,
     WHERE Country LIKE 'Japan'
 )AS B
 WHERE A.SupplierID = B.SupplierID
-
