@@ -24,10 +24,32 @@
 	PRINT @@ERROR ;
 
 	-- 22. 請觀察 ERROR_NUMBER() 錯誤訊息是什麼 ==> 空白?
-	INSERT INTO #TEMP VALUES ( 1 );
-	PRINT ERROR_NUMBER() ;
+	EXEC sp_addmessage 55555,5,'ERROR',
+		@lang = 'us_english'
+	GO
+	EXEC sp_addmessage 55555,5,'顯示錯誤',
+		@lang = '繁體中文'
 
+
+
+	BEGIN TRY
+		RAISERROR(55555,17,10)
+	END TRY
+	BEGIN CATCH
+		SELECT
+			ERROR_NUMBER() AS ErrorNumber,
+			ERROR_SEVERITY() AS ErrorSeverity,
+			ERROR_STATE() AS ErrorState,
+			ERROR_PROCEDURE() AS EP,
+			ERROR_LINE() AS ErrorLine,
+			ERROR_MESSAGE() AS ErrorMessage
+	END CATCH
 	-- 23. 一筆有錯，一筆沒有錯的情況下，@@ERROR 會如何記錄?  ==> 最近一次的執行結果
-	INSERT INTO #TEMP VALUES ( 1 );
-	INSERT INTO #TEMP VALUES ( 2 );
+	BEGIN TRY
+		INSERT INTO #TEMP VALUES ( 1 );
+		INSERT INTO #TEMP VALUES ( 2 );
+	END TRY
+	BEGIN CATCH
+		THROW 55554,'顯示錯誤',3
+	END CATCH
 	PRINT @@ERROR ;

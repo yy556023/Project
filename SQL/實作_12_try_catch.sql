@@ -80,11 +80,70 @@ END CATCH
 		RAISERROR (40655, 2, 1);
 		PRINT '--- 分隔線 ---';
 
-		RAISERROR (50001, 2, 1);
+		EXEC sp_addmessage 50001,1,'ERROR FOR PURPOSE',
+			@lang = 'us_english'
+		GO
+		EXEC sp_addmessage 50001,1,'故意犯錯',
+			@lang = '繁體中文'
+
+		BEGIN TRY
+			RAISERROR (50001, 12, 5);
+			PRINT '--- 分隔線 ---';
+		END TRY
+		BEGIN CATCH
+			SELECT
+				ERROR_NUMBER() AS 錯誤代碼,
+				ERROR_SEVERITY() AS 錯誤等級,
+				ERROR_STATE() AS 錯誤狀態,
+				ERROR_MESSAGE() AS 錯誤訊息,
+				ERROR_LINE() AS 錯誤行
+		END CATCH
+GO
+
+CREATE PROCEDURE E_M @a varchar(50),@b int,@c int AS 
+		BEGIN TRY
+			RAISERROR (@a, @b, @c);
+			PRINT '--- 分隔線 ---';
+		END TRY
+		BEGIN CATCH
+			SELECT
+				ERROR_NUMBER() AS 錯誤代碼,
+				ERROR_SEVERITY() AS 錯誤等級,
+				ERROR_STATE() AS 錯誤狀態,
+				ERROR_MESSAGE() AS 錯誤訊息,
+				ERROR_LINE() AS 錯誤行
+		END CATCH
+GO
+
+EXEC E_M 測試等級大於10,15,3
+
+declare @string nvarchar(50) = '測試玩玩看'
+--set @string = '測試'
+--select @string
+
+
+		RAISERROR (N'%s', 2, 2, @string);
 		PRINT '--- 分隔線 ---';
 
-		RAISERROR (N'%s', 2, 2, '把這邊的文字傳回去給前面的%s');
-		PRINT '--- 分隔線 ---';
+GO
+
+CREATE PROCEDURE PLAY @a varchar(50),@b int,@c int AS 
+		DECLARE @d varchar(50) = @a
+		
+		BEGIN TRY
+			RAISERROR (N'%s', @b, @c, @d);
+		END TRY
+		BEGIN CATCH
+			SELECT
+				ERROR_NUMBER() AS 錯誤代碼,
+				ERROR_SEVERITY() AS 錯誤等級,
+				ERROR_STATE() AS 錯誤狀態,
+				ERROR_MESSAGE() AS 錯誤訊息,
+				ERROR_LINE() AS 錯誤行
+		END CATCH
+GO
+
+EXEC PLAY 我來玩玩看的,15,5;
 
 	-- THROW
 		THROW 49999, 'test THROW', 0;

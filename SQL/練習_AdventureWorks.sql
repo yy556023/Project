@@ -101,8 +101,8 @@ SELECT * FROM Sales.SalesOrderDetail
 
 SELECT SalesOrderID,OrderDate
 FROM Sales.SalesOrderHeader AS SOH
--- WHERE MONTH(OrderDate) BETWEEN 7 AND 9
-WHERE SUBSTRING(CONVERT(varchar(50),SOH.OrderDate,112),5,2) BETWEEN '07' AND '09'
+ --WHERE MONTH(OrderDate) BETWEEN 7 AND 9
+WHERE SUBSTRING(FORMAT(OrderDate,'yyyyMMdd'),5,2) BETWEEN '07' AND '09'
 
 SELECT SalesOrderID,ProductID,LineTotal
 FROM Sales.SalesOrderDetail
@@ -119,7 +119,7 @@ FROM HumanResources.EmployeePayHistory AS EPH,Person.Person AS P
 WHERE EPH.Rate IN
 (SELECT DISTINCT TOP 10 Rate FROM HumanResources.EmployeePayHistory ORDER BY Rate DESC)
 AND EPH.BusinessEntityID = P.BusinessEntityID
-ORDER BY Rate DESC
+ORDER BY Rate DESC,BusinessEntityID
 
 SELECT * FROM Person.Person
 SELECT * FROM HumanResources.EmployeePayHistory
