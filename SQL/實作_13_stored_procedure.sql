@@ -30,11 +30,11 @@ insert DemoSalary values (1,'20210310',42000),(1,'20210410',42000)
 select * from DemoEmp
 select * from DemoSalary
 -- 20. 建立不需要傳入參數的 procedure：uspGetEmployee 查詢 #emp 資料表
+GO
 
 CREATE PROCEDURE uspGetEmployee as
-    select * from DemoEmp
-    select * from DemoSalary
-
+		--select * from DemoEmp
+		--select * from DemoSalary
 
 -- 21. 執行 uspGetEmployee 查看
 
@@ -65,6 +65,16 @@ select * from DemoSalary
 --    c. 更新 #emp 註記
 --    d. 計算薪資：( 離職日 - 系統日 ) * 8 * 150
 
+create procedure uspByeBye @id int, @d char(8), @msg varchar(500) output as
+    --c.更新註記
+    update DemoEmp set EmpStatus = 'D' where EmpID = @id
+    --D.計算薪資
+    --declare @temp int = (cast(@d as int) - cast(convert(char(8),getdate(),112) as int)) * 8 * 150
+	    declare @temp int = (cast(@d as int) - cast(FORMAT(GETDATE(),'yyyyMMdd') as int)) * 8 * 150
+    insert into DemoSalary
+    (EmpID,PayDate,Salary)
+	values
+	(@id,@d,@msg)
 
 -- 41. 測試執行，exec uspByeBye
 --		a. 測試人員存在的情況
