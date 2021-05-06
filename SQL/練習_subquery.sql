@@ -12,6 +12,12 @@ FROM Products AS P,
 WHERE P.CategoryID = A.CategoryID
 ORDER BY CategoryID
 
+-- 方法二
+SELECT CategoryID,ProductID,ProductName,UnitPrice,
+(SELECT AVG(UnitPrice) FROM Products AS B WHERE A.CategoryID = B.CategoryID GROUP BY CategoryID)平均單價,
+(SELECT A.UnitPrice - AVG(UnitPrice) FROM Products AS B WHERE A.CategoryID = B.CategoryID GROUP BY CategoryID) 價差
+FROM Products AS A
+ORDER BY CategoryID
 
 -- 420 請列出有訂第三類產品的訂單
 SELECT  OrderID,CategoryID --OrderID
@@ -35,6 +41,14 @@ FROM Products AS A,
 )AS B
 WHERE A.ProductID = B.ProductID
 ORDER BY B.銷售數量 DESC
+
+-- 方法二
+SELECT ProductID,ProductName
+FROM Products
+WHERE ProductID IN (select top 3 ProductID
+	from [Order Details]
+	group by ProductID
+	order by SUM(Quantity) desc)
 
 
 -- 440 有哪些產品是日商提供的?

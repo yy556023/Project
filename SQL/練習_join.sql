@@ -35,6 +35,8 @@ FROM
 	WHERE CustomerID LIKE 'VINET'
 )AS A
 
+-- 方法2
+	SELECT COUNT(DISTINCT EmployeeID) 業務數量 FROM Orders WHERE CustomerID = 'VINET'
 
 -- 360. VINET的訂單中，所有經手業務的名字 (JOIN)
 SELECT DISTINCT LastName,FirstName
@@ -44,23 +46,31 @@ WHERE CustomerID LIKE 'VINET'
 
 
 -- 370. VINET的訂單中，找出訂單編號為10274所購買的產品清單，請找出產品名稱、產品價格
-SELECT O.OrderID,P.ProductID,P.ProductName,OD.UnitPrice
-FROM Orders AS O INNER JOIN [Order Details] AS OD
-ON O.OrderID = OD.OrderID INNER JOIN Products AS P
+SELECT O.OrderID,E.EmployeeID,E.FirstName,P.ProductName,OD.UnitPrice
+FROM
+Orders AS O
+INNER JOIN [Order Details] AS OD
+ON O.OrderID = OD.OrderID
+INNER JOIN Products AS P
 ON OD.ProductID = P.ProductID
+INNER JOIN Employees AS E
+ON O.EmployeeID = E.EmployeeID
 WHERE CustomerID LIKE 'VINET' AND O.OrderID = 10274
 
 
 -- 380. 依照貨運公司，哪一家貨運公司承接最多訂單金額 (加總訂單價格)
-SELECT TOP 1 ShipVia,SUM(Total) Total
+SELECT TOP 1 ShipVia,CompanyName,SUM(Total) Total
 FROM
 (
-	SELECT O.OrderID,SUM(UnitPrice*Quantity*(1-Discount)) Total,ShipVia
-	FROM Orders AS O INNER JOIN [Order Details] AS OD
+	SELECT O.OrderID,S.CompanyName,SUM(UnitPrice*Quantity*(1-Discount)) Total,ShipVia
+	FROM Orders AS O
+	INNER JOIN [Order Details] AS OD
 	ON O.OrderID = OD.OrderID
-	GROUP BY O.OrderID,ShipVia
+	INNER JOIN Shippers AS S
+	ON O.ShipVia = S.ShipperID
+	GROUP BY O.OrderID,ShipVia,CompanyName
 )AS A
-GROUP BY ShipVia
+GROUP BY ShipVia,CompanyName
 ORDER BY Total DESC
 
 -- SELECT ShipVia,A.Total
