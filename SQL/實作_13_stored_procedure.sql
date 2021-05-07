@@ -67,14 +67,31 @@ select * from DemoSalary
 
 create procedure uspByeBye @id int, @d char(8), @msg varchar(500) output as
     --c.更新註記
-    update DemoEmp set EmpStatus = 'D' where EmpID = @id
+    begin try
+		update DemoEmp set EmpStatus = 'D' where EmpID = @id
+		if @@rowcount = 0
+			set @msg = concat('1-1 更新失敗，員工編號:',@id,' 不存在');
+	end try
+	begin catch
+		set @msg = concat('1-2 更新失敗，錯誤訊息:', error_message());
+	end catch
     --D.計算薪資
-    --declare @temp int = (cast(@d as int) - cast(convert(char(8),getdate(),112) as int)) * 8 * 150
-	    declare @temp int = (cast(@d as int) - cast(FORMAT(GETDATE(),'yyyyMMdd') as int)) * 8 * 150
-    insert into DemoSalary
-    (EmpID,PayDate,Salary)
-	values
-	(@id,@d,@msg)
+
+    declare @temp int = (cast(@d as int) - cast(convert(char(8),getdate(),112) as int)) * 8 * 150
+	
+	begin try
+		declare @temp int = (cast(@d as int) - cast(FORMAT(GETDATE(),'yyyyMMdd') as int)) * 8 * 150
+		insert into DemoSalary
+		(EmpID,PayDate,Salary)
+		values
+		(@id,@d,@msg)
+	end try
+
+	
+
+	--concat() 轉型成字串 字串與變數串接用 ' , '
+	--@@rowcount 系統全域變數，最近的系統更新資料量
+
 
 -- 41. 測試執行，exec uspByeBye
 --		a. 測試人員存在的情況
@@ -84,8 +101,10 @@ create procedure uspByeBye @id int, @d char(8), @msg varchar(500) output as
 -- 50. 修改 40 產生的 sp
 --    a. @@rowcount
 --    b. len()
-
+	
+		
 
 -- 51. 測試執行，exec uspByeBye
 --    a. 需要增加一個變數接收 sp 回傳值
 --    b. 記得呼叫時也要加上 output 關鍵字
+

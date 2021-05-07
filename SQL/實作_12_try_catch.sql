@@ -100,6 +100,8 @@ END CATCH
 		END CATCH
 GO
 
+-- 錯誤狀態 狀態非字面上的意義
+
 CREATE PROCEDURE E_M @a varchar(50),@b int,@c int AS 
 		BEGIN TRY
 			RAISERROR (@a, @b, @c);
